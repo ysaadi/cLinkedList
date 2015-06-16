@@ -37,6 +37,16 @@ int main(int argc, char** argv){
 	comparator intCompare= &intComparator;
 	iterateOver printFun= &printInts;
 	list=list_new(sizeof(int),freeFun, intCompare );
-
-
+	int x;
+	int * ptr= malloc(sizeof(int)*8);
+	void * dat;
+	lListNode * tempNode;
+	for(x=0;x<8;x++){
+		*ptr=x;
+		dat=ptr;
+		list_append(dat,list);
+		ptr++;
+	}
+mapOntoList(printFun,list);
+return 0;
 }
